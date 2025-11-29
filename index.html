@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4B3VG42EP5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4B3VG42EP5');
+</script>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TW5TNXHC');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Mayhem Store - Fight Club Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+            padding: 1.5rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
+            border-bottom: 2px solid #8b0000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4444;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #ff4444;
+            border: 2px solid #ff4444;
+            transform: translateY(-2px);
+        }
+
+        .cart-btn {
+            background: #8b0000;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: #ff4444;
+            transform: scale(1.05);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a0000 0%, #330000 50%, #1a1a1a 100%);
+            padding: 8rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 68, 68, 0.03) 2px,
+                rgba(255, 68, 68, 0.03) 4px
+            );
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #ff4444;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
+
+        .hero-btn {
+            background: #8b0000;
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            border: 2px solid #ff4444;
+        }
+
+        .hero-btn:hover {
+            background: #ff4444;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.6);
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: #1a1a1a;
+            padding: 2rem 5%;
+            text-align: center;
+            border-bottom: 2px solid #8b0000;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            padding: 0.8rem 2rem;
+            border: 2px solid #444;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #8b0000;
+            border-color: #ff4444;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff4444;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff4444;
+            box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border: 1px solid #444;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            color: #ff4444;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .product-desc {
+            color: #aaa;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: #8b0000;
+            color: white;
+            padding: 0.8rem;
+            border: 2px solid #ff4444;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #ff4444;
+            transform: scale(1.05);
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-content {
+            background: #1a1a1a;
+            padding: 2rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 3px solid #ff4444;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #ff4444;
+            padding-bottom: 1rem;
+        }
+
+        .cart-header h2 {
+            color: #ff4444;
+            font-size: 2rem;
+        }
+
+        .close-cart {
+            background: #8b0000;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .close-cart:hover {
+            background: #ff4444;
+        }
+
+        .cart-items {
+            margin-bottom: 2rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #2a2a2a;
+            margin-bottom: 1rem;
+            border: 1px solid #444;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            color: #ff4444;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .qty-btn {
+            background: #8b0000;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .qty-btn:hover {
+            background: #ff4444;
+        }
+
+        .remove-btn {
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            background: #ff4444;
+        }
+
+        .cart-total {
+            border-top: 2px solid #ff4444;
+            padding-top: 1rem;
+            text-align: right;
+        }
+
+        .cart-total h3 {
+            color: #4CAF50;
+            font-size: 1.8rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            text-transform: uppercase;
+        }
+
+        .checkout-btn:hover {
+            background: #45a049;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #888;
+            padding: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 2px solid #8b0000;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-quote {
+            font-size: 1.5rem;
+            color: #ff4444;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ff4444;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW5TNXHC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Project Mayhem</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <div class="cart-btn" onclick="toggleCart()">
+                    Cart
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <h1>The First Rule</h1>
+        <p>You don't talk about Fight Club. But you can wear it.</p>
+        <button class="hero-btn" onclick="scrollToProducts()">Break The Rules</button>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('cases')">Mobile Cases</button>
+            <button class="filter-btn" onclick="filterProducts('posters')">Posters</button>
+            <button class="filter-btn" onclick="filterProducts('apparel')">Apparel</button>
+            <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section" id="products">
+        <h2 class="section-title">Underground Collection</h2>
+        <div class="products-grid" id="productsGrid"></div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" onclick="toggleCart()">✕</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: ₹<span id="cartTotal">0</span></h3>
+                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-quote">"It's only after we've lost everything that we're free to do anything."</div>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#shipping">Shipping Info</a>
+                <a href="#returns">Returns</a>
+            </div>
+            <p style="color: #666; margin-top: 2rem;">© 2024 Project Mayhem Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Tyler Durden Mobile Case", category: "cases", price: 499, desc: "Premium quality case with iconic Tyler artwork" },
+            { id: 2, name: "Fight Club Rules Poster", category: "posters", price: 299, desc: "All 8 rules in vintage style typography" },
+            { id: 3, name: "Soap Company T-Shirt", category: "apparel", price: 799, desc: "Paper Street Soap Co. premium cotton tee" },
+            { id: 4, name: "Marla Singer Case", category: "cases", price: 499, desc: "Distressed art style mobile protection" },
+            { id: 5, name: "I Am Jack's Poster", category: "posters", price: 349, desc: "Iconic quote in grunge aesthetic" },
+            { id: 6, name: "Space Monkeys Hoodie", category: "apparel", price: 1499, desc: "Black hoodie with monkey logo" },
+            { id: 7, name: "Red Leather Jacket Case", category: "cases", price: 549, desc: "Inspired by Tyler's iconic jacket" },
+            { id: 8, name: "Basement Fight Poster", category: "posters", price: 399, desc: "First fight scene vintage print" },
+            { id: 9, name: "Chaos Keychain", category: "accessories", price: 199, desc: "Metal keychain with project logo" },
+            { id: 10, name: "Brad Pitt Portrait Case", category: "cases", price: 599, desc: "High quality printed case" },
+            { id: 11, name: "His Name Is... Poster", category: "posters", price: 299, desc: "Robert Paulson tribute art" },
+            { id: 12, name: "Fight Club Cap", category: "accessories", price: 599, desc: "Embroidered black baseball cap" },
+            { id: 13, name: "Mayhem Logo Case", category: "cases", price: 449, desc: "Minimalist logo design case" },
+            { id: 14, name: "Pink Soap Poster", category: "posters", price: 349, desc: "Paper Street Soap aesthetic" },
+            { id: 15, name: "Anarchy T-Shirt", category: "apparel", price: 699, desc: "Underground rebellion design" },
+            { id: 16, name: "Project Mayhem Backpack", category: "accessories", price: 1999, desc: "Tactical style black backpack" },
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+
+        function getProductImage(product) {
+            // Using Unsplash for high-quality images based on product type
+            const imageMap = {
+                1: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop', // phone case
+                2: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop', // poster
+                3: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', // t-shirt
+                4: 'https://images.unsplash.com/photo-1585679604615-6c163bbbd8b7?w=400&h=400&fit=crop', // phone case
+                5: 'https://images.unsplash.com/photo-1499892477393-f675706cbe6e?w=400&h=400&fit=crop', // poster art
+                6: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop', // hoodie
+                7: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400&h=400&fit=crop', // phone case red
+                8: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=400&h=400&fit=crop', // vintage poster
+                9: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400&h=400&fit=crop', // keychain
+                10: 'https://images.unsplash.com/photo-1603891637193-743d29b39d37?w=400&h=400&fit=crop', // phone case portrait
+                11: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop', // memorial poster
+                12: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop', // cap
+                13: 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?w=400&h=400&fit=crop', // minimal case
+                14: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=400&fit=crop', // soap poster
+                15: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400&h=400&fit=crop', // graphic tee
+                16: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop', // backpack
+            };
+            return imageMap[product.id] || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop';
+        }
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('productsGrid');
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(p => p.category === filter);
+            
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${getProductImage(product)}" alt="${product.name}">
+                    </div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-desc">${product.desc}</div>
+                    <div class="product-price">₹${product.price}</div>
+                    <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+                </div>
+            `).join('');
+        }
+
+        function filterProducts(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderProducts(category);
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="empty-cart">Your cart is empty. Start breaking rules!</div>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div>₹${item.price} × ${item.quantity}</div>
+                        </div>
+                        <div class="cart-item-controls">
+                            <button class="qty-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+                            <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = total;
+        }
+
+        function changeQuantity(productId, change) {
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCart();
+                }
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Checkout functionality - Connect to payment gateway here!\nTotal: ₹' + cart.reduce((sum, item) => sum + (item.price * item.quantity), 0));
+        }
+
+        function scrollToProducts() {
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>
