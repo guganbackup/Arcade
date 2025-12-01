@@ -1,737 +1,82 @@
+<!-- index.html: Simple Responsive E‑commerce Home Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LD5K2T03RK"></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W40T88S2DF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-LD5K2T03RK');
+  gtag('config', 'G-W40T88S2DF');
 </script>
-    <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TV5FPTHN');</script>
+})(window,document,'script','dataLayer','GTM-N9SDZVDC');</script>
 <!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Mayhem Store - Fight Club Collection</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Courier New', monospace;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
-            padding: 1.5rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
-            border-bottom: 2px solid #8b0000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ff4444;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border: 2px solid transparent;
-        }
-
-        .nav-links a:hover {
-            color: #ff4444;
-            border: 2px solid #ff4444;
-            transform: translateY(-2px);
-        }
-
-        .cart-btn {
-            background: #8b0000;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .cart-btn:hover {
-            background: #ff4444;
-            transform: scale(1.05);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #ff4444;
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1a0000 0%, #330000 50%, #1a1a1a 100%);
-            padding: 8rem 5%;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 68, 68, 0.03) 2px,
-                rgba(255, 68, 68, 0.03) 4px
-            );
-            pointer-events: none;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            color: #ff4444;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
-            animation: glitch 3s infinite;
-        }
-
-        @keyframes glitch {
-            0%, 100% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: #cccccc;
-        }
-
-        .hero-btn {
-            background: #8b0000;
-            color: white;
-            padding: 1rem 3rem;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            border: 2px solid #ff4444;
-        }
-
-        .hero-btn:hover {
-            background: #ff4444;
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 68, 68, 0.6);
-        }
-
-        /* Filter Section */
-        .filter-section {
-            background: #1a1a1a;
-            padding: 2rem 5%;
-            text-align: center;
-            border-bottom: 2px solid #8b0000;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: #2a2a2a;
-            color: #e0e0e0;
-            padding: 0.8rem 2rem;
-            border: 2px solid #444;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: #8b0000;
-            border-color: #ff4444;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Products Grid */
-        .products-section {
-            padding: 4rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #ff4444;
-            margin-bottom: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background: #1a1a1a;
-            border: 2px solid #333;
-            padding: 1.5rem;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff4444;
-            box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background: #2a2a2a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            border: 1px solid #444;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .placeholder-text {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .product-name {
-            font-size: 1.3rem;
-            color: #ff4444;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .product-desc {
-            color: #aaa;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .product-price {
-            font-size: 1.5rem;
-            color: #4CAF50;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .add-to-cart {
-            width: 100%;
-            background: #8b0000;
-            color: white;
-            padding: 0.8rem;
-            border: 2px solid #ff4444;
-            cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-
-        .add-to-cart:hover {
-            background: #ff4444;
-            transform: scale(1.05);
-        }
-
-        /* Cart Modal */
-        .cart-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cart-content {
-            background: #1a1a1a;
-            padding: 2rem;
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            border: 3px solid #ff4444;
-        }
-
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #ff4444;
-            padding-bottom: 1rem;
-        }
-
-        .cart-header h2 {
-            color: #ff4444;
-            font-size: 2rem;
-        }
-
-        .close-cart {
-            background: #8b0000;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .close-cart:hover {
-            background: #ff4444;
-        }
-
-        .cart-items {
-            margin-bottom: 2rem;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background: #2a2a2a;
-            margin-bottom: 1rem;
-            border: 1px solid #444;
-        }
-
-        .cart-item-info {
-            flex: 1;
-        }
-
-        .cart-item-name {
-            color: #ff4444;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .cart-item-controls {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .qty-btn {
-            background: #8b0000;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .qty-btn:hover {
-            background: #ff4444;
-        }
-
-        .remove-btn {
-            background: #333;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .remove-btn:hover {
-            background: #ff4444;
-        }
-
-        .cart-total {
-            border-top: 2px solid #ff4444;
-            padding-top: 1rem;
-            text-align: right;
-        }
-
-        .cart-total h3 {
-            color: #4CAF50;
-            font-size: 1.8rem;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            background: #4CAF50;
-            color: white;
-            padding: 1rem;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 1rem;
-            text-transform: uppercase;
-        }
-
-        .checkout-btn:hover {
-            background: #45a049;
-        }
-
-        .empty-cart {
-            text-align: center;
-            color: #888;
-            padding: 2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            padding: 3rem 5%;
-            text-align: center;
-            border-top: 2px solid #8b0000;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-quote {
-            font-size: 1.5rem;
-            color: #ff4444;
-            font-style: italic;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ff4444;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple E‑Commerce | Home</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #222; color: #fff; padding: 15px; text-align: center; }
+    nav { display: flex; justify-content: center; gap: 20px; padding: 10px; background: #f2f2f2; }
+    nav a { text-decoration: none; color: #333; font-weight: bold; }
+    .hero { background: #e8e8e8; padding: 60px 20px; text-align: center; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; padding: 20px; }
+    .card { padding: 15px; border: 1px solid #ddd; border-radius: 8px; text-align: center; }
+    .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 6px; }
+    footer { background: #222; color: #fff; text-align: center; padding: 15px; margin-top: 30px; }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV5FPTHN"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9SDZVDC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Project Mayhem</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <div class="cart-btn" onclick="toggleCart()">
-                    Cart
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <header>
+    <h1>MyShop</h1>
+  </header>
 
-    <!-- Hero Section -->
-    <div class="hero" id="home">
-        <h1>The First Rule</h1>
-        <p>You don't talk about Fight Club. But you can wear it.</p>
-        <button class="hero-btn" onclick="scrollToProducts()">Break The Rules</button>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="payment.html">Payment</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Welcome to MyShop</h2>
+    <p>Your one‑stop store for quality products.</p>
+  </section>
+
+  <section class="products">
+    <div class="card">
+      <img src= "https://littleboxindia.com/cdn/shop/files/Tie_Shoulder_Layered_Ruched_Cami_Dress_In_Pink.jpg?v=1754569211">
+      <h3>Product 1</h3>
+      <p>₹499</p>
+      <a href="products.html">View</a>
     </div>
-
-    <!-- Filter Section -->
-    <div class="filter-section">
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
-            <button class="filter-btn" onclick="filterProducts('cases')">Mobile Cases</button>
-            <button class="filter-btn" onclick="filterProducts('posters')">Posters</button>
-            <button class="filter-btn" onclick="filterProducts('apparel')">Apparel</button>
-            <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
-        </div>
+    <div class="card">
+      <img src="data:image/jpeg;base64,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">
+      <h3>Product 2</h3>
+      <p>₹799</p>
+      <a href="products.html">View</a>
     </div>
-
-    <!-- Products Section -->
-    <div class="products-section" id="products">
-        <h2 class="section-title">Underground Collection</h2>
-        <div class="products-grid" id="productsGrid"></div>
+    <div class="card">
+      <img src="data:image/jpeg;base64,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">
+      <h3>Product 3</h3>
+      <p>₹999</p>
+      <a href="products.html">View</a>
     </div>
+  </section>
 
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h2>Your Cart</h2>
-                <button class="close-cart" onclick="toggleCart()">✕</button>
-            </div>
-            <div class="cart-items" id="cartItems"></div>
-            <div class="cart-total">
-                <h3>Total: ₹<span id="cartTotal">0</span></h3>
-                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-quote">"It's only after we've lost everything that we're free to do anything."</div>
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#shipping">Shipping Info</a>
-                <a href="#returns">Returns</a>
-            </div>
-            <p style="color: #666; margin-top: 2rem;">© 2024 Project Mayhem Store. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        const products = [
-            { id: 1, name: "Tyler Durden Mobile Case", category: "cases", price: 499, desc: "Premium quality case with iconic Tyler artwork" },
-            { id: 2, name: "Fight Club Rules Poster", category: "posters", price: 299, desc: "All 8 rules in vintage style typography" },
-            { id: 3, name: "Soap Company T-Shirt", category: "apparel", price: 799, desc: "Paper Street Soap Co. premium cotton tee" },
-            { id: 4, name: "Marla Singer Case", category: "cases", price: 499, desc: "Distressed art style mobile protection" },
-            { id: 5, name: "I Am Jack's Poster", category: "posters", price: 349, desc: "Iconic quote in grunge aesthetic" },
-            { id: 6, name: "Space Monkeys Hoodie", category: "apparel", price: 1499, desc: "Black hoodie with monkey logo" },
-            { id: 7, name: "Red Leather Jacket Case", category: "cases", price: 549, desc: "Inspired by Tyler's iconic jacket" },
-            { id: 8, name: "Basement Fight Poster", category: "posters", price: 399, desc: "First fight scene vintage print" },
-            { id: 9, name: "Chaos Keychain", category: "accessories", price: 199, desc: "Metal keychain with project logo" },
-            { id: 10, name: "Brad Pitt Portrait Case", category: "cases", price: 599, desc: "High quality printed case" },
-            { id: 11, name: "His Name Is... Poster", category: "posters", price: 299, desc: "Robert Paulson tribute art" },
-            { id: 12, name: "Fight Club Cap", category: "accessories", price: 599, desc: "Embroidered black baseball cap" },
-            { id: 13, name: "Mayhem Logo Case", category: "cases", price: 449, desc: "Minimalist logo design case" },
-            { id: 14, name: "Pink Soap Poster", category: "posters", price: 349, desc: "Paper Street Soap aesthetic" },
-            { id: 15, name: "Anarchy T-Shirt", category: "apparel", price: 699, desc: "Underground rebellion design" },
-            { id: 16, name: "Project Mayhem Backpack", category: "accessories", price: 1999, desc: "Tactical style black backpack" },
-        ];
-
-        let cart = [];
-        let currentFilter = 'all';
-
-        function getProductImage(product) {
-            // Using Unsplash for high-quality images based on product type
-            const imageMap = {
-                1: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop', // phone case
-                2: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop', // poster
-                3: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop', // t-shirt
-                4: 'https://images.unsplash.com/photo-1585679604615-6c163bbbd8b7?w=400&h=400&fit=crop', // phone case
-                5: 'https://images.unsplash.com/photo-1499892477393-f675706cbe6e?w=400&h=400&fit=crop', // poster art
-                6: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop', // hoodie
-                7: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400&h=400&fit=crop', // phone case red
-                8: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=400&h=400&fit=crop', // vintage poster
-                9: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400&h=400&fit=crop', // keychain
-                10: 'https://images.unsplash.com/photo-1603891637193-743d29b39d37?w=400&h=400&fit=crop', // phone case portrait
-                11: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop', // memorial poster
-                12: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop', // cap
-                13: 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?w=400&h=400&fit=crop', // minimal case
-                14: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=400&fit=crop', // soap poster
-                15: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400&h=400&fit=crop', // graphic tee
-                16: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop', // backpack
-            };
-            return imageMap[product.id] || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop';
-        }
-
-        function renderProducts(filter = 'all') {
-            const grid = document.getElementById('productsGrid');
-            const filteredProducts = filter === 'all' 
-                ? products 
-                : products.filter(p => p.category === filter);
-            
-            grid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="${getProductImage(product)}" alt="${product.name}">
-                    </div>
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-desc">${product.desc}</div>
-                    <div class="product-price">₹${product.price}</div>
-                    <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
-                </div>
-            `).join('');
-        }
-
-        function filterProducts(category) {
-            currentFilter = category;
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            renderProducts(category);
-        }
-
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-            
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartCount = document.getElementById('cartCount');
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-            
-            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
-            
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<div class="empty-cart">Your cart is empty. Start breaking rules!</div>';
-            } else {
-                cartItems.innerHTML = cart.map(item => `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <div class="cart-item-name">${item.name}</div>
-                            <div>₹${item.price} × ${item.quantity}</div>
-                        </div>
-                        <div class="cart-item-controls">
-                            <button class="qty-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
-                            <span>${item.quantity}</span>
-                            <button class="qty-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
-                            <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-            
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            cartTotal.textContent = total;
-        }
-
-        function changeQuantity(productId, change) {
-            const item = cart.find(i => i.id === productId);
-            if (item) {
-                item.quantity += change;
-                if (item.quantity <= 0) {
-                    removeFromCart(productId);
-                } else {
-                    updateCart();
-                }
-            }
-        }
-
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCart();
-        }
-
-        function toggleCart() {
-            const modal = document.getElementById('cartModal');
-            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty!');
-                return;
-            }
-            alert('Checkout functionality - Connect to payment gateway here!\nTotal: ₹' + cart.reduce((sum, item) => sum + (item.price * item.quantity), 0));
-        }
-
-        function scrollToProducts() {
-            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        renderProducts();
-    </script>
+  <footer>
+    <p>© 2025 MyShop. All rights reserved.</p>
+  </footer>
 </body>
 </html>
